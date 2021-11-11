@@ -16,19 +16,19 @@ namespace SumOfDigit_DigitalRoot
             // 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
             // 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2
 
-            long n;
-            while (true)
-            {
-                Console.Write("Введите число: ");
-                if (Int64.TryParse(Console.ReadLine(), out n))
+                long n;
+                while (true)
                 {
-                    Console.WriteLine($"Digital root number \"{n}\" is \t\t {DigitalRoot(n)}");
+                    Console.Write("Введите число: ");
+                    if (Int64.TryParse(Console.ReadLine(), out n))
+                    {
+                        Console.WriteLine($"Digital root number \"{n}\" is \t\t {DigitalRoot(n)}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Введенное значение не является числом!");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("Введенное значение не является числом!");
-                }
-            }
         }
 
         /// <summary>
