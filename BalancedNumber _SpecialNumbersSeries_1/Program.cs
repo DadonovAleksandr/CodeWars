@@ -69,5 +69,33 @@ namespace BalancedNumber__SpecialNumbersSeries_1
             
             return not;
         }
+        
+        /// <summary>
+        /// Best answer
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static string BalancedNumberBest(int number)
+        {
+            double middle = number.ToString().Length / 2.0;
+            var leftSum = number.ToString().Take((int)Math.Ceiling(middle - 1)).Sum(x => x);
+            var rightSum = number.ToString().Skip((int)++middle).Sum(x => x);
+            return leftSum == rightSum ? "Balanced" : "Not Balanced";
+        }
+        
+        
+        /// <summary>
+        /// Also likes
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static string BalancedNumber2st(int n)
+        {
+            return $"{n}".Take(($"{n}".Length + 1) / 2 - 1).Sum(c => c) == $"{n}".Skip($"{n}".Length / 2 + 1).Sum(c => c)
+                ? "Balanced"
+                : "Not Balanced";
+        }
+        
+        
     }
 }
