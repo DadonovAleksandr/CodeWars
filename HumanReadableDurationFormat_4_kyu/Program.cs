@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HumanReadableDurationFormat_4_kyu
 {
@@ -57,11 +58,42 @@ namespace HumanReadableDurationFormat_4_kyu
                 }
             }
         }
-        
+        /// <summary>
+        /// My answer
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
         public static string formatDuration(int seconds)
         {
-            //Enter Code here
-            return "now";
+            const int secInMin = 60;                // 60 s in minute
+            const int secInHour = 60*60;            // 3600 s in hour
+            const int secInDay = 24 * secInHour;    // 86 400 s in day
+            const int secInYear = 365 * secInDay;   // 31 536 000 s in year
+            
+            if(seconds==0) return "now";
+            
+            var year = seconds / secInYear;
+            seconds -= year * secInYear;
+            var day = seconds / secInDay;
+            seconds -= day * secInDay;
+            var hour = seconds / secInHour;
+            seconds -= hour * secInHour;
+            var min = seconds / secInMin;
+            seconds -= min * secInMin;
+            
+            List<string> components = new List<string>();
+            if (seconds > 0) { components.Add($"{seconds} second" + (seconds>1 ? "s" : "")); }
+            if (min > 0) { components.Add($"{min} minute" + (min>1 ? "s" : "")); }
+            if (hour > 0) { components.Add($"{hour} hour" + (hour>1 ? "s" : "")); }
+            if (day > 0) { components.Add($"{day} day" + (day>1 ? "s" : "")); }
+            if (year > 0) { components.Add($"{year} year" + (year>1 ? "s" : "")); }
+            
+            string result = "";
+            for (int i = 0; i < components.Count; i++)
+            {
+                result = components[i] + (i > 1 ? ", " : "") + (i==1 ? " and " : "") + result;
+            }
+            return result;
         }
     }
 }
