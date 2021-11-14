@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HumanReadableDurationFormat_4_kyu
 {
@@ -94,6 +95,85 @@ namespace HumanReadableDurationFormat_4_kyu
                 result = components[i] + (i > 1 ? ", " : "") + (i==1 ? " and " : "") + result;
             }
             return result;
+        }
+        
+        /// <summary>
+        /// Best answer
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        public static string formatDurationBest(int seconds){
+            if (seconds == 0){
+                return "now";
+            }
+    
+            var time = TimeSpan.FromSeconds(seconds);
+            var timesList = new string[]{
+                MultipleFormat("year", time.Days / 365),
+                MultipleFormat("day", time.Days % 365),
+                MultipleFormat("hour", time.Hours),
+                MultipleFormat("minute", time.Minutes),
+                MultipleFormat("second", time.Seconds)
+            };
+            var list = timesList.Where(x => x != string.Empty).ToList();
+    
+            if (list.Count == 1){
+                return list.First();
+            }
+    
+            var firstPart = string.Join(", ", list.Take(list.Count - 1));
+    
+            return $"{firstPart} and {list.Last()}";
+        }
+  
+        private static string MultipleFormat(string measure, double count){
+            var c = (int)count;
+            if (measure == string.Empty || c == 0){
+                return string.Empty;
+            }
+            if (c != 1){
+                measure = measure + "s";
+            }
+            return $"{c} {measure}";
+        }
+        
+        /// <summary>
+        /// Also likes
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
+        public static string formatDuration2st(int seconds){
+            if (seconds == 0)
+            {
+                return "now";
+            }
+            
+            var values = new Dictionary<string, int>()
+            {
+                { "year", seconds / (60 * 60 * 24 * 365) },
+                { "day", seconds / (60 * 60 * 24) % 365 },
+                { "hour", seconds / (60 * 60) % 24 },
+                { "minute", seconds / 60 % 60 },
+                { "second", seconds % 60 },
+            };
+
+            var formattedValues =
+                values.Where(x => x.Value > 0)
+                    .Select(x => string.Format("{0} {1}{2}", x.Value, x.Key, x.Value > 1 ? "s" : ""))
+                    .ToArray();
+
+            if (formattedValues.Length == 1)
+            {
+                return formattedValues.First();
+            }
+            
+            var joinedValues =
+                String.Join(", ", formattedValues, 0, formattedValues.Length - 1)
+                + (formattedValues.Length > 1
+                    ? " and " + formattedValues.LastOrDefault()
+                    : "");
+
+            return joinedValues;
         }
     }
 }
