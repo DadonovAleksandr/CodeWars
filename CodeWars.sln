@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalancedNumber _SpecialNumb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanReadableDurationFormat_4_kyu", "HumanReadableDurationFormat_4_kyu\HumanReadableDurationFormat_4_kyu.csproj", "{DB08C112-E36A-4BBB-B377-747E4E397A04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summation_8_kyu", "Summation_8_kyu\Summation_8_kyu.csproj", "{DFDC9370-5261-449D-BAFC-A297CD4C1D76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{DB08C112-E36A-4BBB-B377-747E4E397A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB08C112-E36A-4BBB-B377-747E4E397A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB08C112-E36A-4BBB-B377-747E4E397A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
