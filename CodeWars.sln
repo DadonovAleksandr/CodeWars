@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanReadableDurationFormat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summation_8_kyu", "Summation_8_kyu\Summation_8_kyu.csproj", "{DFDC9370-5261-449D-BAFC-A297CD4C1D76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic Mathematical Operations_8_kyu", "Basic Mathematical Operations_8_kyu\Basic Mathematical Operations_8_kyu.csproj", "{8F646C70-8B60-4F76-B237-5DD6C12AA86E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFDC9370-5261-449D-BAFC-A297CD4C1D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F646C70-8B60-4F76-B237-5DD6C12AA86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F646C70-8B60-4F76-B237-5DD6C12AA86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F646C70-8B60-4F76-B237-5DD6C12AA86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F646C70-8B60-4F76-B237-5DD6C12AA86E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
